@@ -1,0 +1,10 @@
+from [regex] require [compile, match, find]
+
+let re = compile("[a-z]+@[a-z]+\\.[a-z]+", 0)
+if match(re, "user@example.com") {
+    write ["adres email poprawny"]
+}
+let result = find(re, "user@example.com")
+if result != nil {
+    write ["dopasowano: " + result[0]]
+}
